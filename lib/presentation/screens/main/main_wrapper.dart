@@ -18,12 +18,19 @@ class MainWrapper extends HookWidget {
     final currentIndex = useState(0);
 
     return Scaffold(
-      appBar: currentIndex.value == 0
-          ? homeAppBar()
-          : AppBar(
-              elevation: 0,
-              backgroundColor: Colors.black,
-            ),
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.black,
+        title: Text("${BottomNavItem.items[currentIndex.value].label}"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(SimpleLineIcons.bell, size: 20,),
+            padding: const EdgeInsets.only(right: 15),
+          )
+        ],
+      ),
       body: PageView.builder(
         itemCount: BottomNavItem.items.length,
         itemBuilder: (ctx, idx) => BottomNavItem.items[currentIndex.value].page,
@@ -63,7 +70,7 @@ class MainWrapper extends HookWidget {
         IconButton(
           onPressed: () {},
           icon: const Icon(SimpleLineIcons.bell, size: 20,),
-          padding: EdgeInsets.only(right: 15),
+          padding: const EdgeInsets.only(right: 15),
         )
       ],
     );
@@ -85,7 +92,7 @@ class BottomNavItem {
         const BottomNavItem(
           icon: SimpleLineIcons.compass,
           page: HomeScreen(),
-          label: "Home",
+          label: "Discover",
         ),
         const BottomNavItem(
           icon: SimpleLineIcons.magnifier,

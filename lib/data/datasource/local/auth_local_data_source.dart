@@ -10,7 +10,6 @@ class AuthLocalDataSource {
 
   UserProfile? getUserProfile() {
     final localUser = _prefsManager.getJsonMap(AppConstants.prefsUserKey);
-    print("Local: $localUser");
     if (localUser.isEmpty) return null;
     return UserProfile.fromJson(localUser);
   }
