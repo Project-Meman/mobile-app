@@ -37,6 +37,13 @@
             {
               "client_id": "296450698240-1bpjhamti2f4584s2g1djelf8th3smdq.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "296450698240-c4igi1v1nof0uvp42so2ohg14t44f21t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.meman"
+              }
             }
           ]
         }
