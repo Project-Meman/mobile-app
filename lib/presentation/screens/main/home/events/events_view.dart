@@ -175,14 +175,14 @@ class EventListItem extends HookConsumerWidget {
           ),
           const SizedBox(height: 10),
           Row(
-            children: const [
-              Text("Weekly"),
-              SizedBox(width: 5),
-              Icon(FontAwesome5.dot_circle, size: 5),
-              SizedBox(width: 10),
-              Icon(FontAwesome5Solid.star, size: 10),
-              SizedBox(width: 10),
-              Text("4.4(477)"),
+            children: [
+              const Text("Weekly"),
+              const SizedBox(width: 5),
+              const Icon(FontAwesome5.dot_circle, size: 5),
+              const SizedBox(width: 5),
+              Icon(FontAwesome5Solid.star, size: 10, color: AppColors.primary),
+              const SizedBox(width: 5),
+              const Text("4.4(477)"),
             ],
           ),
           const SizedBox(height: 5),
