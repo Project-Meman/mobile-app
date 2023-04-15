@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "296450698240",
+    "project_id": "meman-app",
+    "storage_bucket": "meman-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296450698240:android:0b5e4270d1a979c7fb7ce5",
+        "android_client_info": {
+          "package_name": "app.meman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296450698240-72h7u9bbv70j7n88s1tcthrg975o07km.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.meman",
+            "certificate_hash": "3421a986e03614899cf8bfda91897c73e43e8156"
+          }
+        },
+        {
+          "client_id": "296450698240-1bpjhamti2f4584s2g1djelf8th3smdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB60k7-2g4bXq2WuoGPzzgIrVRAy4HG7Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296450698240-1bpjhamti2f4584s2g1djelf8th3smdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
