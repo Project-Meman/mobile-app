@@ -31,9 +31,12 @@ class $AssetsImagesGen {
   AssetGenImage get logoWithText =>
       const AssetGenImage('assets/images/logo_with_text.png');
 
+  /// File path: assets/images/tmp_map.png
+  AssetGenImage get tmpMap => const AssetGenImage('assets/images/tmp_map.png');
+
   /// List of all assets
   List<AssetGenImage> get values =>
-      [coloredLogo, coloredLogoWithText, introBg, logo, logoWithText];
+      [coloredLogo, coloredLogoWithText, introBg, logo, logoWithText, tmpMap];
 }
 
 class Assets {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meman/core/utils/theme/app_colors.dart';
+import 'package:meman/core/utils/res/app_colors.dart';
 
 class AppTheme {
   static ThemeData get defaultTheme => darkTheme;
@@ -41,19 +41,32 @@ class AppTheme {
       );
 
   static ThemeData get lightTheme => ThemeData.light().copyWith(
+        textTheme: GoogleFonts.interTextTheme(),
         scaffoldBackgroundColor: Colors.white,
+        primaryColor: AppColors.primary,
+        primaryColorLight: AppColors.primary,
+        splashColor: AppColors.primary,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          foregroundColor: AppColors.primaryDark,
+          backgroundColor: AppColors.primaryLight,
+        ),
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: AppColors.secondary,
+        ),
         inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: AppColors.light,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.grey),
+            borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.grey),
+            borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.grey),
+            borderSide: BorderSide.none,
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:meman/core/utils/theme/app_colors.dart';
+import 'package:meman/core/utils/res/app_colors.dart';
 
 class SearchScreen extends HookWidget {
   static const id = "/search";

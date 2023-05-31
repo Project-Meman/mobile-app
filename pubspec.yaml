@@ -29,6 +29,10 @@ dependencies:
   equatable: ^2.0.3
   logging: ^1.0.2
 
+  appwrite: ^2.1.0
+
+  phosphor_flutter: ^1.4.0
+
   # State Management
   get: ^4.6.5
   flutter_hooks: ^0.18.3

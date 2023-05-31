@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:meman/core/utils/theme/app_colors.dart';
+import 'package:get/get.dart';
+import 'package:meman/core/utils/res/app_colors.dart';
 import 'package:meman/presentation/screens/main/bookings/bookings_screen.dart';
-import 'package:meman/presentation/screens/main/favourites/favourites_screen.dart';
 import 'package:meman/presentation/screens/main/home/home_screen.dart';
 import 'package:meman/presentation/screens/main/profile/profile_screen.dart';
 import 'package:meman/presentation/screens/main/search/search_screen.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class MainWrapper extends HookWidget {
   static const id = "/main";
@@ -18,61 +18,40 @@ class MainWrapper extends HookWidget {
     final currentIndex = useState(0);
 
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.black,
-        title: Text("${BottomNavItem.items[currentIndex.value].label}"),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(SimpleLineIcons.bell, size: 20,),
-            padding: const EdgeInsets.only(right: 15),
-          )
-        ],
-      ),
+      appBar: currentIndex.value == 0
+          ? null
+          : AppBar(
+              elevation: 0,
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.transparent,
+              title: Text("${BottomNavItem.items[currentIndex.value].label}"),
+            ),
       body: PageView.builder(
         itemCount: BottomNavItem.items.length,
         itemBuilder: (ctx, idx) => BottomNavItem.items[currentIndex.value].page,
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) => currentIndex.value = index,
+        backgroundColor: Colors.white,
         currentIndex: currentIndex.value,
-        backgroundColor: Colors.black,
-        unselectedItemColor: Colors.white,
-        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.muted,
+        selectedItemColor: AppColors.primaryDark,
         type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: BottomNavItem.items
-            .map((item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
-                  label: item.label,
-                ))
-            .toList(),
+        iconSize: 30,
+        // showUnselectedLabels: false,
+        // showSelectedLabels: false,
+        unselectedFontSize: 10,
+        selectedFontSize: 10,
+        items: BottomNavItem.items.map(
+          (BottomNavItem navItem) {
+            return BottomNavigationBarItem(
+              icon: Icon(navItem.icon).marginOnly(bottom: 4),
+              tooltip: navItem.label,
+              label: navItem.label,
+            );
+          },
+        ).toList(),
       ),
-    );
-  }
-
-  PreferredSizeWidget homeAppBar() {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.black,
-      title: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          Icon(FontAwesome5Solid.map_marker_alt, size: 15),
-          SizedBox(width: 5),
-          Expanded(child: Text("Accra, Ghana", style: TextStyle(fontSize: 16)))
-        ],
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(SimpleLineIcons.bell, size: 20,),
-          padding: const EdgeInsets.only(right: 15),
-        )
-      ],
     );
   }
 }
@@ -90,27 +69,22 @@ class BottomNavItem {
 
   static List<BottomNavItem> get items => [
         const BottomNavItem(
-          icon: SimpleLineIcons.compass,
+          icon: PhosphorIcons.compassFill,
           page: HomeScreen(),
-          label: "Discover",
+          label: "Explore",
         ),
         const BottomNavItem(
-          icon: SimpleLineIcons.magnifier,
+          icon: PhosphorIcons.calendarCheckFill,
           page: SearchScreen(),
-          label: "Search",
+          label: "Upcoming",
         ),
         const BottomNavItem(
-          icon: SimpleLineIcons.event,
+          icon: PhosphorIcons.mapTrifoldFill,
           page: BookingsScreen(),
-          label: "Bookings",
+          label: "Trips",
         ),
         const BottomNavItem(
-          icon: SimpleLineIcons.heart,
-          page: FavouritesScreen(),
-          label: "Favourite",
-        ),
-        const BottomNavItem(
-          icon: SimpleLineIcons.user,
+          icon: PhosphorIcons.userCircleFill,
           page: ProfileScreen(),
           label: "Profile",
         ),

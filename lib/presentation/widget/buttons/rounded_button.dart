@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:meman/core/utils/theme/app_colors.dart';
+import 'package:meman/core/utils/res/app_colors.dart';
 
 class AppButton extends HookWidget {
   final String text;
@@ -16,14 +16,14 @@ class AppButton extends HookWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.primaryLight,
         padding: const EdgeInsets.symmetric(vertical: 20),
       ),
       onPressed: onPressed,
       child: Text(
         text,
         style: TextStyle(
-          color: AppColors.black,
+          color: AppColors.primaryDark,
           fontSize: 16,
           fontWeight: FontWeight.bold,
         ),

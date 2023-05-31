@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
-import 'package:meman/core/utils/theme/app_colors.dart';
+import 'package:meman/core/utils/res/app_colors.dart';
+import 'package:meman/core/utils/res/app_text_styles.dart';
 import 'package:meman/gen/assets.gen.dart';
 import 'package:meman/presentation/screens/onboarding/auth/signup_login_screen.dart';
 import 'package:meman/presentation/widget/buttons/rounded_button.dart';
@@ -58,26 +59,23 @@ class IntroScreen extends HookWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
+                      Text(
                         "Explore",
-                        style: TextStyle(
-                          fontSize: 48,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppTextStyles.headline
+                            .copyWith(color: AppColors.light),
                       ),
                       Text(
                         "and discover new places.",
-                        style: TextStyle(
-                          fontSize: 48,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
+                        style: AppTextStyles.headline.copyWith(
+                          color: AppColors.primaryLight,
                         ),
                       ),
                       const SizedBox(height: 20),
-                      const Text(
-                        "Discover places you never knew existed.\n"
-                        "Sit tight as we bring you closer to your dream vacation.",
-                        style: TextStyle(fontSize: 16),
+                      Text(
+                        "Discover places you never knew existed. "
+                        "Just sit tight as we bring you closer to your dream vacation.",
+                        style: AppTextStyles.bodyOne
+                            .copyWith(color: AppColors.light),
                       )
                     ],
                   ),
